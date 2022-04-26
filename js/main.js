@@ -1,3 +1,5 @@
+
+// 검색 파트 
 const searchEl = document.querySelector('.search');
 const searchInputEl = searchEl.querySelector('input');
 
@@ -14,3 +16,24 @@ searchInputEl.addEventListener('blur', function() {
   searchEl.classList.remove('focused');
   searchInputEl.setAttribute('placeholder', '');
 });
+
+// 뱃지 파트
+const badeEL = document.querySelector('header .badges');
+
+window.addEventListener('scroll', _.throttle(function() {
+  if (window.scrollY > 500) {
+    // 배지 숨김
+    // gsap.to(요소, 지속시간, 옵션);
+    gsap.to(badeEL, .4, {
+      opacity : 0,
+      display : 'none'
+    });
+  }else {
+    // 배지 보여줌
+    gsap.to(badeEL, .6, {
+      opacity : 1,
+      display: 'block'
+    });
+  }
+}, 300));
+// -.throttle(함수, 시간);

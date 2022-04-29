@@ -73,7 +73,7 @@ new Swiper('.notice-line .swiper', {
   direction: 'vertical', // 수직 슬라이드
   autoplay: true, // 자동 재생 여부
   loop: true // 반복 재생 여부
-})
+});
 new Swiper('.promotion .swiper', {
   slidesPerView : 3, //한번에 보여줄 스라이드 개수
   spaceBetween : 10, //슬라이드 사이 여백
@@ -89,6 +89,16 @@ new Swiper('.promotion .swiper', {
   navigation : {
     prevEl : '.promotion .swiper-prev',
     nextEl : '.promotion .swiper-next'
+  }
+});
+new Swiper('.awards .swiper', {
+  autoplay : true,
+  loop : true,
+  spaceBetween : 30,
+  slidesPerView : 5,
+  navigation : {
+    prevEl : '.awards .swiper-prev',
+    nextEl : '.awards .swiper-next'
   }
 });
 
@@ -145,3 +155,7 @@ spyEls.forEach(function (spyEl) {
     .setClassToggle(spyEl, 'show')
     .addTo(new ScrollMagic.Controller());
 });
+
+
+const thisYear = document.querySelector('.this-year');
+thisYear.textContent = new Date().getFullYear();

@@ -105,4 +105,9 @@ let isHideRomotion = false;
 
 promotionToggleBtn.addEventListener('click', function () {
   isHideRomotion = !isHideRomotion
+  if(isHideRomotion) {
+    promotionEl.classList.add('hide');
+  }else {
+    promotionEl.classList.remove('hide');
+  }
 });

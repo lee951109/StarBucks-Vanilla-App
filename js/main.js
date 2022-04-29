@@ -27,6 +27,7 @@ searchInputEl.addEventListener('blur', function() {
  */
 // 페이지 스크롤에 영행을 받는 요소들을 검색
 const badeEL = document.querySelector('header .badges');
+const toTopEl = document.querySelector('#to-top');
 
 //페이지에 스크롤 이벤트 추가
 //스크롤이 지나치게 자주 발생하는 것을 조절(throttle, 일부러 부하를 준다)
@@ -38,16 +39,31 @@ window.addEventListener('scroll', _.throttle(function() {
       opacity : 0,
       display : 'none'
     });
+
+    // 버튼 보이기
+    gsap.to(toTopEl, .2, {
+      x : 0,
+    });
   }else {
     // Badge 보여줌
     gsap.to(badeEL, .6, {
       opacity : 1,
       display: 'block'
     });
+
+    //버튼 숨기기
+    gsap.to(toTopEl, .2, {
+      x : 100,
+    });
   }
 }, 300));
 // -.throttle(함수, 시간);
 
+toTopEl.addEventListener('click', function () {
+  gsap.to(window, .7, {
+    scrollTo : 0
+  });
+});
 
 
 /**

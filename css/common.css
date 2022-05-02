@@ -67,6 +67,14 @@ a {
 	background-color: #FFF;
 	color: #333
 }
+.btn.btn--pink {
+	color: #d73a7a;
+	border-color: #d73a7a
+}
+.btn.btn--pink:hover {
+	background-color: #d73a7a;
+	color: #FFF
+}
 .back-to-position {
 	opacity: 0;
 	transition: 1s;

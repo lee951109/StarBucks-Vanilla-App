@@ -2,7 +2,7 @@
 
 스타벅스 클론 코딩입니다..! 
 
-[STARBUCKS DEMO!!](https://deft-sawine-cac56e.netlify.app/)
+[STARBUCKS DEMO!!](https://starbukss.netlify.app/)
 
 <br/>
 
